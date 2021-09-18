@@ -14,11 +14,12 @@ const App = () => {
       <button onClick={ann}>
         押してください
       </button>
+    　
       <button onClick={open}>
          上からくる
       </button>  
     </div>  
-
+　　
       
      );
 };
