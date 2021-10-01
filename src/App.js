@@ -22,6 +22,7 @@ const App = () => {
      setCount(count*0)
   }
 
+
   return (
     <div>
       <button onClick={ann}>
@@ -34,12 +35,14 @@ const App = () => {
       <div>
         <Button onClick={wanabeeee}>いいね</Button>
         <Button onClick={ureeeyyy}>ダメだね</Button>
-        <Button onClick={overdrive}>reset</Button>
-        {count}
+        <Button onClick={overdrive}>reset</Button>{count}
       </div>
-    </div>  
-　　
-      
+       <form name="OHGI72">
+       <input id="starplatinam"type="text">
+       </input>
+       <button  type="button" onClick="{}(document.OHGI72.text)">表示</button>
+       </form>
+    </div>    
      );
 };
 
