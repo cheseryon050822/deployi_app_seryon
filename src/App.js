@@ -21,8 +21,11 @@ const App = () => {
   const overdrive =()=>{
      setCount(count*0)
   }
-
-
+  const [texter,setTexter]=useState()
+  const eirian=()=>{
+    setTexter(texter)
+    console.log(texter)
+  }
   return (
     <div>
       <button onClick={ann}>
@@ -38,9 +41,9 @@ const App = () => {
         <Button onClick={overdrive}>reset</Button>{count}
       </div>
        <form name="OHGI72">
-       <input id="starplatinam"type="text">
+       <input id="starplatinam"type="text" onChange={e=>setTexter(e.target.value)}>
        </input>
-       <button  type="button" onClick="{}(document.OHGI72.text)">表示</button>
+       <button  type="button" onClick={eirian}> 表示</button>
        </form>
     </div>    
      );
