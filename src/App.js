@@ -22,9 +22,11 @@ const App = () => {
      setCount(count*0)
   }
   const [texter,setTexter]=useState()
+  const [maseege,setMseege]=useState()
   const eirian=()=>{
     setTexter(texter)
     console.log(texter)
+    setMseege(texter)
   }
   return (
     <div>
@@ -43,7 +45,8 @@ const App = () => {
        <form name="OHGI72">
        <input id="starplatinam"type="text" onChange={e=>setTexter(e.target.value)}>
        </input>
-       <button  type="button" onClick={eirian}> 表示</button>
+       
+       <button  type="button" onClick={eirian}>表示</button>{maseege}
        </form>
     </div>    
      );
