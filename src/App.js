@@ -28,6 +28,11 @@ const App = () => {
     console.log(texter)
     setMseege(texter)
   }
+  const [error,setError]=useState()
+  const back=()=>{
+    setError("文字を入力してください")
+    console.log(error)
+  } 
   return (
     <div>
       <button onClick={ann}>
@@ -46,7 +51,7 @@ const App = () => {
        <input id="starplatinam"type="text" onChange={e=>setTexter(e.target.value)}>
        </input>
        
-       <button  type="button" onClick={eirian}>表示</button>{maseege}
+       <button  type="button" onClick={back}>表示</button>{error}
        </form>
     </div>    
      );
