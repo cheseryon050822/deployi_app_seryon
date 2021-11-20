@@ -11,6 +11,7 @@ const App = () => {
   const [paper,setPaper]=useState("パー")
   const[myhand,setMyhand]=useState("")
   const[judge,setJudge]=useState()
+  const[data,setData]=useState()
 
   const ann =()=>{
     console.log('Hello world')
@@ -28,9 +29,7 @@ const App = () => {
   const overdrive =()=>{
      setCount(count*0)
   }
-  const stand =()=>{
-    setCount(count*5)
-  }
+  
   useEffect(() => {
     winorlose()
   })
@@ -73,7 +72,7 @@ const winorlose=()=>{
   const iwa =()=>{
     janken()
     setMyhand("グー")
-    console.log()
+    console.log(rock)
   }
   const hasami =()=>{
     janken()
@@ -97,9 +96,11 @@ const winorlose=()=>{
     axios.get('https://qiita.com/api/v2/items')
     .then(res =>  {
         console.log(res,'res check') 
-        
+        setData(res.data)
+    console.log(data)
     })
   　},[])
+  
   console.log(cpuhand)
   return (
     <div>
@@ -137,7 +138,15 @@ const winorlose=()=>{
        <Button onClick={wanabeeee}>いいね</Button>
         <Button onClick={ureeeyyy}>ダメだね</Button>
         <Button onClick={overdrive}>reset</Button>{count}
-        {axios}
+        {data&&data.map((d,index)=>{
+          return(
+            <div>
+              {d.title}
+            
+            </div>
+          )
+        })}
+
        </div>
 
     </div>    
