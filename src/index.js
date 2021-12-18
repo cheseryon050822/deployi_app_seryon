@@ -8,7 +8,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ComponentB from './Components/ComponetB';
+import ComponentB from './Components/ComponentB';
 
 
 ReactDOM.render(
@@ -18,8 +18,11 @@ ReactDOM.render(
       <Route exact path="/" >
         <App />
       </Route>
-      <Route exact path="/componentb" >
+      <Route exact path="/ComponentB" >
         <ComponentB />
+      </Route>
+      <Route path="/ComponentB/:Helloworld">
+        <ComponentB/>
       </Route>
      </Switch>
     </Router>

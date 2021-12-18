@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import axios from 'axios'
+import { Link,useParams,useHistory } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
   const[myhand,setMyhand]=useState("")
   const[judge,setJudge]=useState()
   const[data,setData]=useState()
-
+  const history = useHistory();
   
   const ann =()=>{
     console.log('Hello world')
@@ -37,7 +38,8 @@ const App = () => {
   useEffect(() => {
     winorlose()
   })
-  
+  const {Helloworld}=useParams;
+
 const winorlose=()=>{
     if(myhand==="グー" && cpuhand==="チョキ") {
      setJudge('勝ち！')
@@ -120,7 +122,11 @@ const winorlose=()=>{
         <Button onClick={iwa}>グー</Button>
         <Button onClick={hasami}>チョキ</Button>
         <Button onClick={kami}>パー</Button>
+        <Link to="ComponentB">支社に左遷</Link>
       </div>
+      <button
+        onClick={() => history.push('/ComponentB')}
+      >謎のボタン</button>
       <div>
         自分の手{myhand}
       </div>
@@ -130,6 +136,7 @@ const winorlose=()=>{
       <div>
         勝敗:{judge}
       </div>
+
        <form name="OHGI72">
        <input id="starplatinam"type="text" onChange={e=>setTexter(e.target.value)}>
        </input>
