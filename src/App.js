@@ -1,9 +1,10 @@
 import Button from '@restart/ui/esm/Button';
 import React,{useState,useEffect} from 'react'
-import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import axios from 'axios'
+
+
 
 const App = () => {
   const [count,setCount]=useState(0)
@@ -15,6 +16,7 @@ const App = () => {
   const[judge,setJudge]=useState()
   const[data,setData]=useState()
 
+  
   const ann =()=>{
     console.log('Hello world')
   }
@@ -106,6 +108,7 @@ const winorlose=()=>{
   console.log(cpuhand)
   return (
     <div>
+      
       <button onClick={ann}>
         押してください
       </button>
@@ -136,39 +139,8 @@ const winorlose=()=>{
        {error}
        </div>
        </form>
-       <div>
-       <Button onClick={wanabeeee}>いいね</Button>
-        <Button onClick={ureeeyyy}>ダメだね</Button>
-        <Button onClick={overdrive}>reset</Button>{count}
-        
-        <Table striped bordered hover variant="dark">
-  <thead>
-    <tr>
-      
-      <th>title</th>
-  
-    </tr>
-  </thead>
-  <tbody>
-  {data&&data.map((d,index)=>{
-                
-          
-            
-              return(
-                <tr key={index}>
-
-                    <td>{d.title}</td>
-                </tr>
-
-          )}
-  )}
-  </tbody>
-</Table>
-
-       </div>
-
-    </div>    
-     );
+    </div>
+  )
 };
 
 export default App;
