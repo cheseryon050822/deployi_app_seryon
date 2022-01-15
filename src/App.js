@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import axios from 'axios'
-import { Link,useParams,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 
 
@@ -27,7 +27,7 @@ const App = () => {
   }
   const wanabeeee =()=> {
     setCount(count+1)
-　}
+  }
   const ureeeyyy =()=>{
     setCount(count-1)
   }
@@ -38,7 +38,7 @@ const App = () => {
   useEffect(() => {
     winorlose()
   })
-  const {Helloworld}=useParams;
+  
 
 const winorlose=()=>{
     if(myhand==="グー" && cpuhand==="チョキ") {
@@ -122,7 +122,7 @@ const winorlose=()=>{
         <Button onClick={iwa}>グー</Button>
         <Button onClick={hasami}>チョキ</Button>
         <Button onClick={kami}>パー</Button>
-        <Link to="ComponentB">支社に左遷</Link>
+        <Link to="ComponentB/Helloworld">支社に左遷</Link>
       </div>
       <button
         onClick={() => history.push('/ComponentB')}

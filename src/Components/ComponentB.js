@@ -1,11 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react'
+import { Link,useParams} from 'react-router-dom';
  const ComponentB= () => {
+     const [url,seturl]=useState()
+     const Easler =()=>{
+         seturl()
+         console.log(url)
+     }
+     const { Helloworld } = useParams();
      return(
-         <>
-         <div>ComponentB</div>
+         <div>
+         <h1>ComponentB {Helloworld}</h1>
          <Link to="/">本社</Link>
-         </>
+        {url}
+         </div>
      )
  };
 

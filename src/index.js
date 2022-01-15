@@ -15,13 +15,13 @@ ReactDOM.render(
   <React.StrictMode>
      <Router>
       <Switch>
-      <Route exact path="/" >
+      <Route exact path="/" exact>
         <App />
       </Route>
-      <Route exact path="/ComponentB" >
+      <Route exact path="/ComponentB" exact>
         <ComponentB />
       </Route>
-      <Route path="/ComponentB/:Helloworld">
+      <Route path="/ComponentB/:Helloworld"Component={ComponentB} exact>
         <ComponentB/>
       </Route>
      </Switch>
